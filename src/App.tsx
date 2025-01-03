@@ -1,26 +1,25 @@
+// App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom'; // Импорт маршрутов
+//import Home from './components/Home'; // Импорт компонента главной страницы
+//import NotFound from './components/NotFound'; // Импорт компонента для обработки 404
+import Header from './components/Header'; // Импорт компонента заголовка
+//import Footer from './components/Footer';
+import RecipeList from "./components/RecipeList"; // Импорт компонента нижнего колонтитула
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+        <Header /> {/* Заголовок приложения */}
+        <main>
+          <Routes>
+            <Route path="/products" element={<RecipeList />} /> {/* Главная страница */}
+            //Route path="*" element={ }  {/* Страница 404 */}
+
+          </Routes>
+        </main>
+      </div>
   );
-}
+};
 
 export default App;

@@ -1,19 +1,25 @@
+// index.tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from './App'; // Импорт вашего корневого компонента
+import { BrowserRouter } from 'react-router-dom'; // Импорт маршрутизатора, если используете React Router
+import { Provider } from 'react-redux'; // Импорт провайдера Redux, если используете Redux
+import store from './redux/store'; // Импорт вашего Redux store, если используете Redux
+import './index.css'; // Импорт глобальных стилей, если есть
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+// Создание корневого элемента
+const rootElement = document.getElementById('root') as HTMLElement;
+
+// Создание корневого рендерера
+const root = ReactDOM.createRoot(rootElement);
+
+// Рендеринг приложения
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.StrictMode>
+        <Provider store={store}> {/* Провайдер Redux */}
+            <BrowserRouter> {/* Провайдер маршрутизатора */}
+                <App /> {/* Ваш корневой компонент */}
+            </BrowserRouter>
+        </Provider>
+    </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
