@@ -1,19 +1,15 @@
 // Home.tsx
 import React from 'react';
+import "../App.css";
 
 const Home: React.FC = () => {
     return (
-        <div>
-            <h1>Добро пожаловать на главную страницу!</h1>
-            <p>Это ваше приложение на React. Здесь вы можете добавить любую информацию или функциональность.</p>
-            <div>
-                <h2>Основные функции:</h2>
-                <ul>
-                    <li>Функция 1</li>
-                    <li>Функция 2</li>
-                    <li>Функция 3</li>
-                </ul>
-            </div>
+        <div className="home">
+            <h1 className="home-welcome">Welcome to the main page of the recipe book! Choose what you want to do</h1>
+            <img src={require('../images/main4.jpg')} alt="photo" className="home-img"/>
+            <button className="home-btn1">Watch all recipes</button>
+            <h1 className="home-or">or</h1>
+            <button className="home-btn2">Create your</button>
         </div>
     );
 };

@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 .App {
   text-align: center;
 }
@@ -13,20 +17,100 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+  font-family: 'BeerMoney';
+  src: url('./fonts/beer_money.ttf') format('truetype')
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+  font-family: 'LatoLight';
+  src: url('./fonts/lato_light.ttf') format('truetype')
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(86, 109, 5, 0.65);
+  color: #383a31;
+  padding: 10px;
+  height: 30px;
+}
+.header nav {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+}
+.header nav a {
+  text-decoration: none; /* Убирает подчеркивание */
+  color: inherit; /* Наследует цвет от родительского элемента */
+  font-family: 'LatoLight', sans-serif;
+}
+
+.text-logo{
+  font-family: 'BeerMoney', sans-serif;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.home{
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-img{
+  position: absolute;
+  max-height: 100%;
+  z-index: -1;
+}
+
+.home h1 {
+  font-family: 'LatoLight', sans-serif;
+  position: absolute;
+  transform: translate(-90%, -40%);
+  color: #893e0f;
+  font-size: 1rem; /* Размер текста */
+  text-align: center;
+  z-index: 1; /* Убедитесь, что текст выше фона */
+}
+
+.home-welcome{
+  top: 33%;
+  left: 50%;
+}
+
+.home-or {
+  top: 49%;
+  left: 30%;
+}
+
+.home button{
+  position: absolute;
+  text-decoration: none;
+  background-color: rgba(86, 109, 5, 0.65);
+  border: none;
+  font-family: 'LatoLight', sans-serif;
+  color:#383a31;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  z-index: 1;
+  padding: 7px;
+  transform: translate(-90%, -40%);
+}
+
+.home-btn1{
+  top: 43%;
+  left: 43%;
+}
+
+.home-btn2{
+  top: 55%;
+  left: 39%;
+}
+
+
+
 
 @keyframes App-logo-spin {
   from {
