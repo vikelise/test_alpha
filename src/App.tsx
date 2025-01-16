@@ -6,16 +6,20 @@ import Home from './components/Home'; // Импорт компонента гл�
 import Header from './components/Header'; // Импорт компонента заголовка
 //import Footer from './components/Footer';
 import RecipeList from "./components/RecipeList"; // Импорт компонента нижнего колонтитула
+import RecipeDetail from "./components/RecipeDetail";
+import CreateCard from "./components/CreateProduct";
 
 const App: React.FC = () => {
   return (
       <div>
         <Header /> {/* Заголовок приложения */}
-        <main>
+        <main className="App">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<RecipeList />} /> {/* Главная страница */}
-            //Route path="*" element={ }  {/* Страница 404 */}
+            <Route path="/products/:id" element={<RecipeDetail />} />
+            <Route path="/create-product" element={<CreateCard />} />
+              //Route path="*" element={ }  {/* Страница 404 */}
 
           </Routes>
         </main>

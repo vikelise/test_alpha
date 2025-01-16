@@ -1,12 +1,29 @@
 import { createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit';
 import axios from 'axios';
 
-interface Recipe {
+export interface Recipe {
     id: number;
     title: string;
     image: string;
+    readyInMinutes: number;
+    spoonacularScore: number;
+    pricePerServing:  number;
+    summary: string;
+    vegan: boolean;
+    vegetarian: boolean;
+    glutenFree: boolean;
+    dairyFree: boolean;
+    veryHealthy: boolean;
+    cheap: boolean;
+    veryPopular: boolean;
+    sustainable: boolean;
+    lowFodmap: boolean;
+    weightWatcherSmartPoints: number;
+    healthScore: number;
     liked: boolean;
-    // добавьте другие необходимые поля
+    servings: number;
+    extendedIngredients: object;
+    instructions: string;
     //интерфейс  объекта рецепта
 }
 
@@ -29,12 +46,22 @@ export const fetchRecipes = createAsyncThunk('recipes/fetchRecipes', async () =>
     const response = await axios.get('https://api.spoonacular.com/recipes/complexSearch', {
         params: {
             apiKey: '95b7951b349848d989f4113c875b481a', // Замените на ваш API ключ
-            number: 100,
+            number: 2,
             offset: 0,
         },
     });
 
     return response.data.results;
+});
+
+// Новый thunk для получения информации о рецепте
+export const fetchRecipeDetails = createAsyncThunk('recipes/fetchRecipeDetails', async (id: number) => {
+    const response = await axios.get(`https://api.spoonacular.com/recipes/${id}/information`, {
+        params: {
+            apiKey: '95b7951b349848d989f4113c875b481a', // Замените на ваш API ключ
+        },
+    });
+    return response.data;
 });
 
 const recipesSlice = createSlice({
@@ -69,6 +96,13 @@ const recipesSlice = createSlice({
             .addCase(fetchRecipes.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message || 'Failed to fetch recipes';
+            })
+            .addCase(fetchRecipeDetails.fulfilled, (state, action) => {
+                const index = state.recipes.findIndex(recipe => recipe.id === action.payload.id);
+                if (index !== -1) {
+                    // Обновляем существующий рецепт с новыми деталями
+                    state.recipes[index] = { ...state.recipes[index], ...action.payload };
+                }
             });
     },
 });

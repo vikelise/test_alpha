@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleLike, removeRecipe } from '../api/recipesSlice'; // Импортируйте ваше действие
+import { useNavigate } from 'react-router-dom';
 
 interface RecipeCardProps {
     id: number;
@@ -15,18 +16,25 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ id, title, image }) => {
     const isLiked = useSelector((state: any) =>
         state.recipes.recipes.find((recipe: RecipeCardProps) => recipe.id === id)?.liked
     );
-    // Предполагается, что ваши рецепты хранятся по id
 
-    const handleLikeToggle = () => {
-        dispatch(toggleLike(id)); // Отправляем действие для обновления состояния
+    const handleLikeToggle = (event: React.MouseEvent<SVGSVGElement>) => {
+        event.stopPropagation(); // Предотвращаем всплытие события
+        dispatch(toggleLike(id));
     };
 
-    const handleRemoveClick = () => {
+    const handleRemoveClick = (event: React.MouseEvent<SVGSVGElement>) => {
+        event.stopPropagation(); // Предотвращаем всплытие события
         dispatch(removeRecipe(id));
     };
 
+    const navigate = useNavigate();
+
+    const handleCardClick = () => {
+        navigate(`/products/${id}`);
+    };
+
     return (
-        <div className="card">
+        <div className="card" onClick={handleCardClick}>
             <div className="card-img">
                 <img src={image} alt="card photo" />
             </div>

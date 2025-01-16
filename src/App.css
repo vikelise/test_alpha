@@ -2,13 +2,9 @@
   margin: 0;
   padding: 0;
 }
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+  color: #893e0f;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -47,9 +43,17 @@
 }
 
 .text-logo{
+  display: flex;
   font-family: 'BeerMoney', sans-serif;
   font-size: 25px;
   margin-bottom: 10px;
+}
+
+.text-logo svg{
+  height: 30px;
+  width: 30px;
+  fill: #383a31;
+  margin-left: 10px;
 }
 
 .home{
@@ -68,7 +72,6 @@
   font-family: 'LatoLight', sans-serif;
   position: absolute;
   transform: translate(-90%, -40%);
-  color: #893e0f;
   font-size: 1rem; /* Размер текста */
   text-align: center;
   z-index: 1; /* Убедитесь, что текст выше фона */
@@ -135,7 +138,6 @@
 
 .breadcrumb {
   list-style: none;
-  color: #893e0f;
 }
 
 .breadcrumb-item {
@@ -144,8 +146,8 @@
 
 .breadcrumb-item a {
   text-decoration: none;
-  color: #893e0f;
   font-family: 'LatoLight', sans-serif;
+  color: #893e0f;
 }
 
 .breadcrumb-item a:hover {
@@ -161,7 +163,6 @@
 .pagination span {
   padding: 5px 10px;
   cursor: pointer;
-  color: #893e0f;
   font-family: 'LatoLight', sans-serif;
 }
 
@@ -223,9 +224,152 @@
 
 .dropdown button:disabled{
   background-color: #FAF3D8FF;
-  color: #893e0f;
   border-color: #893e0f;
 }
+
+.form-container{
+  width: 100%;
+}
+
+.form-container div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.form-container button{
+  text-decoration: none;
+  background-color: rgba(86, 109, 5, 0.65);
+  border: none;
+  font-family: 'LatoLight', sans-serif;
+  color:#383a31;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 7px;
+}
+
+.recipe-container{
+  margin: 15px;
+}
+
+.recipe-container img{
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0 10px 0;
+}
+
+.recipe-summary{
+  margin: 30px 0 10px 0;
+}
+
+.recipe-summary a {
+  color: rgba(86, 109, 5, 1);
+}
+
+.recipe-tags-container{
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipe-tags{
+  background-color: rgba(86, 109, 5, 0.65);
+  padding: 7px;
+  border-radius: 15px;
+  color:#383a31;
+  margin: 3px;
+}
+
+.recipe-info-card-container{
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.recipe-info-card-item{
+  background-color: rgba(86, 109, 5, 0.65);
+  border-radius: 10px;
+  color: #383a31;
+  padding: 7px;
+  margin-bottom: 15px;
+}
+
+.recipe-info-card-item-detail{
+  background-color: #FAF3D8FF;
+  color: #893e0f;
+  border-radius: 10px;
+  text-align: center;
+  padding: 7px;
+  margin-top: 5px;
+}
+
+.recipe-time-container{
+  margin-top: 30px;
+  display: flex;
+  padding: 0 25px 40px 20px ;
+  justify-content: space-between;
+}
+
+.recipe-time-item{
+  display: flex;
+  gap: 10px;
+  margin-top: 7px;
+}
+
+.recipe-time-item svg{
+  width: 21px;
+  height: 21px;
+  fill: #893e0f;
+}
+
+.product-item{
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0 5px 0;
+}
+
+.product-item-units{
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.product-item-container {
+  position: relative;
+}
+
+.dotted-line {
+  width: 100%;
+  height: 1px; /* Высота линии */
+  background: transparent; /* Фон линии */
+  border-top: 4px dotted rgba(86, 109, 5, 0.65);
+  position: absolute;
+  left: 0;
+  z-index: -1; /* Помещаем линию под элементами */
+}
+
+.recipe-instructions{
+  margin-top: 45px;
+}
+
+.recipe-instructions p {
+  margin-bottom: 15px;
+}
+
+.recipe-instructions-info ol{
+  margin: 15px;
+}
+
+.card-btn-details{
+  fill: rgba(86, 109, 5, 0.65);
+}
+
+
+
+
+
 
 
 

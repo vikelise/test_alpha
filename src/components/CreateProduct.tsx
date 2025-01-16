@@ -1,30 +1,79 @@
-// CreateProduct.tsx
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addProduct } from '../redux/actions';
+import { addRecipe } from '../api/recipesSlice';
+import Breadcrumb from "./Breadcrumb";
 
-const CreateProduct: React.FC = () => {
+const CreateCard: React.FC = () => {
     const dispatch = useDispatch();
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [image, setImage] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        dispatch(addProduct({ title, description, image }));
+    const [title, setTitle] = useState('');
+    const [image, setImage] = useState('');
+    const [description, setDescription] = useState('');
+    const [error, setError] = useState('');
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setError('');
+
+        // Минимальная валидация
+        if (!title || !image || !description) {
+            setError('Все поля обязательны');
+            return;
+        }
+
+        // Создание нового продукта
+        const newProduct = {
+            id: Date.now(), // или используйте другой метод для генерации уникального ID
+            title,
+            image,
+        };
+
+        // Сохранение продукта в Redux store
+       // dispatch(addRecipe(newProduct));
+
+        // Очистка формы
         setTitle('');
-        setDescription('');
         setImage('');
+        setDescription('');
     };
 
+    const breadcrumbItems = [
+        { label: 'Home', path: '/' },
+        { label: 'Create', path: '/create-product' },
+    ];
+
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Название" value={title} onChange={(e) => setTitle(e.target.value)} required />
-            <textarea placeholder="Описание" value={description} onChange={(e) => setDescription(e.target.value)} required />
-            <input type="text" placeholder="Ссылка на изображение" value={image} onChange={(e) => setImage(e.target.value)} required />
-            <button type="submit">Создать продукт</button>
-        </form>
+        <div>
+            <Breadcrumb items={breadcrumbItems}/>
+            <h1>Create recipe</h1>
+            <form onSubmit={handleSubmit} className="form-container">
+                <div>
+                    <label>
+                        Title:
+                        <input
+                            type="text"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            required
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Image:
+                        <input
+                            type="text"
+                            value={image}
+                            onChange={(e) => setImage(e.target.value)}
+                            required
+                        />
+                    </label>
+                </div>
+                {error && <div style={{ color: 'red' }}>{error}</div>}
+                <button type="submit">Create</button>
+            </form>
+        </div>
     );
 };
 
-export default CreateProduct;
+export default CreateCard;

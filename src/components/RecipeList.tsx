@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRecipes } from '../api/recipesSlice';
+import { fetchRecipes, fetchRecipeDetails, Recipe } from '../api/recipesSlice';
 import { RootState, AppDispatch } from '../redux/store';
 import Breadcrumb from "./Breadcrumb";
 import Pagination from "./Pagination";
@@ -23,7 +23,16 @@ const RecipeList: React.FC = () => {
 
     //хук для получения данных
     useEffect(() => {
-        dispatch(fetchRecipes());
+        const fetchData = async () => {
+            const result = await dispatch(fetchRecipes());
+            if (result.meta.requestStatus === 'fulfilled') {
+                // Запрашиваем детали для каждого рецепта
+                result.payload.forEach((recipe: Recipe) => {
+                    dispatch(fetchRecipeDetails(recipe.id));
+                });
+            }
+        };
+        fetchData();
     }, [dispatch]);
 
     if (loading) return <div>Loading...</div>;
@@ -46,7 +55,6 @@ const RecipeList: React.FC = () => {
 
     const breadcrumbItems = [
         { label: 'Home', path: '/' },
-        { label: 'Recipes', path: '/products' },
     ];
 
     return (
