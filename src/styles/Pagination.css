@@ -1,0 +1,17 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.pagination span {
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: 'LatoLight', sans-serif;
+}
+
+.pagination .active {
+    background-color: var(--secondary-background-color);
+    color: var(--secondary-text-color);
+    border-radius: 50%;
+}

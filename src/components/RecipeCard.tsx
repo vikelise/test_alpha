@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleLike, removeRecipe } from '../api/recipesSlice'; // Импортируйте ваше действие
 import { useNavigate } from 'react-router-dom';
+import "../styles/RecipeCard.css";
 
 interface RecipeCardProps {
     id: number;

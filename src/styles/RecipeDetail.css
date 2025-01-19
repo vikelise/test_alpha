@@ -1,0 +1,116 @@
+.recipe-container {
+  margin: 15px;
+}
+
+.recipe-container img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0 10px 0;
+}
+
+.recipe-summary {
+  margin: 30px 0 10px 0;
+}
+
+.recipe-summary a {
+  color: var(--secondary-background-color);
+}
+
+.recipe-tags-container {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipe-tags {
+  background-color: var(--secondary-background-color);
+  padding: 7px;
+  border-radius: 15px;
+  color: var(--secondary-text-color);
+  margin: 3px;
+}
+
+.recipe-info-card-container {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.recipe-info-card-item {
+  background-color: var(--secondary-background-color);
+  border-radius: 10px;
+  color: var(--secondary-text-color);
+  padding: 7px;
+  margin-bottom: 15px;
+}
+
+.recipe-info-card-item-detail {
+  background-color: #FAF3D8FF;
+  color: var(--primary-text-color);
+  border-radius: 10px;
+  text-align: center;
+  padding: 7px;
+  margin-top: 5px;
+}
+
+.recipe-time-container {
+  margin-top: 30px;
+  display: flex;
+  padding: 0 25px 40px 20px;
+  justify-content: space-between;
+}
+
+.recipe-time-item {
+  display: flex;
+  gap: 10px;
+  margin-top: 7px;
+}
+
+.recipe-time-item svg {
+  width: 21px;
+  height: 21px;
+  fill: var(--primary-text-color);
+}
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0 5px 0;
+}
+
+.product-item-units {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.product-item-container {
+  position: relative;
+}
+
+.dotted-line {
+  width: 100%;
+  height: 1px; /* Высота линии */
+  background: transparent; /* Фон линии */
+  border-top: 4px dotted var(--secondary-background-color);
+  position: absolute;
+  left: 0;
+  z-index: -1; /* Помещаем линию под элементами */
+}
+
+.recipe-instructions {
+  margin-top: 45px;
+}
+
+.recipe-instructions p {
+  margin-bottom: 15px;
+}
+
+.recipe-instructions-info ol {
+  margin: 15px;
+}
+
+.card-btn-details {
+  fill: var(--secondary-background-color);
+}

@@ -1,6 +1,7 @@
 // components/Pagination.tsx
 
 import React from 'react';
+import "../styles/Pagination.css";
 
 interface PaginationProps {
     currentPage: number;//текущая страница, на которой находится пользователь

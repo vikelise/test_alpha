@@ -1,0 +1,53 @@
+.home{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.home-img{
+    position: absolute;
+    max-height: 100%;
+    z-index: -1;
+}
+
+.home h1 {
+    position: absolute;
+    transform: translate(-90%, -40%);
+    font-size: 1rem;
+    text-align: center;
+    z-index: 1;
+}
+
+.home-welcome{
+    top: 43%;
+    left: 50%;
+}
+
+.home-or {
+    top: 59%;
+    left: 30%;
+}
+
+.home button{
+    position: absolute;
+    text-decoration: none;
+    background-color: var(--secondary-background-color);
+    border: none;
+    color: var(--secondary-text-color);
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    z-index: 1;
+    padding: 7px;
+    transform: translate(-90%, -40%);
+}
+
+.home-btn1{
+    top: 53%;
+    left: 43%;
+}
+
+.home-btn2{
+    top: 65%;
+    left: 39%;
+}

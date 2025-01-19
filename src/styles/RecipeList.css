@@ -1,0 +1,14 @@
+.loading-error-container{
+    display: flex; /* Используйте Flexbox */
+    flex-direction: column; /* Вертикальное выравнивание */
+    justify-content: center; /* Центрирование по вертикали */
+    align-items: center; /* Центрирование по горизонтали */
+    height: 100vh;
+    gap: 7px;
+}
+
+.loading-error-img{
+    border-radius: 10px;
+    max-width: 200px;
+    min-width: 200px;
+}

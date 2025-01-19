@@ -1,0 +1,17 @@
+.breadcrumb {
+    list-style: none;
+}
+
+.breadcrumb-item {
+    display: inline;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    font-family: 'LatoLight', sans-serif;
+    color: var(--primary-text-color);
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}

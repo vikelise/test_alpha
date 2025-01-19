@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addRecipe } from '../api/recipesSlice';
 import Breadcrumb from "./Breadcrumb";
+import "../styles/CreateProduct.css";
+import Footer from "./Footer";
+import Header from "./Header";
 
 const CreateCard: React.FC = () => {
     const dispatch = useDispatch();
@@ -43,7 +46,9 @@ const CreateCard: React.FC = () => {
     ];
 
     return (
-        <div>
+        <div className="app-container">
+            <div className="main-container">
+            <Header />
             <Breadcrumb items={breadcrumbItems}/>
             <h1>Create recipe</h1>
             <form onSubmit={handleSubmit} className="form-container">
@@ -72,6 +77,8 @@ const CreateCard: React.FC = () => {
                 {error && <div style={{ color: 'red' }}>{error}</div>}
                 <button type="submit">Create</button>
             </form>
+            </div>
+            <Footer/>
         </div>
     );
 };

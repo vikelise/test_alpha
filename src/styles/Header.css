@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--secondary-background-color);
+    color: var(--secondary-text-color);
+    padding: 10px;
+    height: 50px;
+}
+.header nav {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+.header nav a {
+    text-decoration: none;
+    color: var(--secondary-text-color);
+}
+
+.text-logo{
+    display: flex;
+    font-family: var(--secondary-font-family), sans-serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.text-logo svg{
+    height: 30px;
+    width: 30px;
+    fill: var(--secondary-text-color);
+    margin-left: 10px;
+}
