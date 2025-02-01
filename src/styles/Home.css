@@ -30,15 +30,7 @@
 
 .home button{
     position: absolute;
-    text-decoration: none;
-    background-color: var(--secondary-background-color);
-    border: none;
-    color: var(--secondary-text-color);
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
     z-index: 1;
-    padding: 7px;
     transform: translate(-90%, -40%);
 }
 

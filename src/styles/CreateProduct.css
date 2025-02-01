@@ -1,21 +1,252 @@
+input, textarea{
+    background-color: var(--light-secondary-background-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--secondary-text-color);
+    padding: 5px;
+    font-family: var(--primary-font-family), 'sans-serif';
+}
+textarea{
+    overflow: hidden;
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border: 2px solid var(--secondary-background-color);
+    font-family: var(--primary-font-family), 'sans-serif';
+}
+
+input::placeholder, textarea::placeholder {
+    outline: none;
+    color: var(--secondary-background-color);
+    font-family: var(--primary-font-family), 'sans-serif';
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.error{
+    background-color: var(--error-background-color);
+    border: 2px solid var(--error-text-color);
+    color: var(--error-text-color);
+}
+
+.create-container{
+    padding: 15px;
+}
+
+.create-container h1{
+    margin: 10px 0 10px 0;
+}
+
 .form-container{
     width: 100%;
 }
 
-.form-container div {
+.form-text-inputs {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
-.form-container button{
-    text-decoration: none;
-    background-color: rgba(86, 109, 5, 0.65);
-    border: none;
-    font-family: 'LatoLight', sans-serif;
-    color:#383a31;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-    padding: 7px;
+.form-checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
+
+.form-checkbox-container div {
+    flex: 1 1 50%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.custom-checkbox {
+    display: none;
+}
+
+.checkbox-label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: var(--light-secondary-background-color);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.custom-checkbox:checked + .checkbox-label::before {
+    background-color: var(--secondary-background-color);
+    border: none;
+}
+
+.custom-checkbox:checked + .checkbox-label::after {
+    content: '✔';
+    position: absolute;
+    left: 4px;
+    top: -2px;
+    color: var(--secondary-text-color);
+    font-size: 16px;
+    display: block;
+}
+
+.form-recipe-info-card{
+    margin-top: 20px;
+}
+
+.form-recipe-info-card-item{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.form-recipe-info-card-item p {
+    margin-top: 3px;
+}
+
+.form-recipe-info-card-item-value{
+    margin-left: 10px;
+}
+
+.form-recipe-info-card-item-value input{
+    margin: 0 3px 0 3px;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+}
+
+.button-minus-plus {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-top: 5px;
+    padding: 0;
+}
+
+.form-time-container{
+    margin-bottom: 15px;
+}
+
+.form-time-container p{
+    margin-bottom: 10px;
+}
+
+.form-time-item-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 25px 0 15px;
+}
+
+.form-time-item input{
+    margin-left: 10px;
+    max-width: 40px;
+    text-align: center;
+}
+
+.products-container{
+    margin-top: 20px;
+}
+
+.products-inputs-button-container{
+    margin-top: 10px;
+    display: flex;
+}
+
+.products-inputs-button-container button {
+    margin: 20px 20px 0 0;
+    padding: 10px 20px 10px 20px;
+}
+
+.products-inputs-container input{
+    margin-bottom: 7px;
+}
+
+.upload-container{
+    border: 2px dashed var(--primary-text-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 20px 0 20px 0;
+}
+
+.error-upload-container{
+    border: 2px dashed var(--error-text-color);
+    background-color: var(--error-background-color);
+    color: var(--error-text-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 20px 0 20px 0;
+}
+
+.upload-input{
+    display: none;
+}
+
+.button-submit-container{
+    display: flex;
+    justify-content: center;
+}
+
+.error-message {
+    font-family: var(--primary-font-family), 'sans-serif';
+    color: var(--error-text-color);
+    font-weight: bold;
+    margin: 10px 0 30px 0;
+    font-size: 16px;
+    text-align: center;
+    background-color: var(--error-background-color);
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--error-text-color);
+}
+
+.uploaded-image-container {
+    margin-top: 20px;
+}
+
+.uploaded-image {
+    max-width: 15%;
+    height: auto;
+    margin: 15px 10px 30px 7px;
+}
+
+.add-products-list-button{
+    display: flex;
+    margin-top: 10px;
+}
+
+.add-products-list-button svg{
+    margin-left: 5px;
+    width: 23px;
+    height: 23px;
+}
+
+.added-products-list{
+    margin-left: 10px;
+}
+
+.added-products-list li{
+    margin-left: 20px;
+}
+

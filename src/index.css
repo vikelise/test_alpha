@@ -16,6 +16,9 @@
   --secondary-background-color: rgba(86, 109, 5, 0.65);
   --primary-text-color: #893e0f;
   --secondary-text-color: #383a31;
+  --light-secondary-background-color: rgba(86, 109, 5, 0.4);
+  --error-background-color: rgba(255, 0, 0, 0.3);
+  --error-text-color: rgba(255, 0, 0, 1);
   --primary-font-family: LatoLight;
   --secondary-font-family: BeerMoney;
 }
@@ -38,6 +41,18 @@ body {
 
 .main-container{
   flex: 1;
+}
+
+button{
+  background-color: var(--secondary-background-color);
+  color: var(--secondary-text-color);
+  text-align: center;
+  border: none;
+  font-family: var(--primary-font-family), sans-serif;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 7px;
 }
 
 

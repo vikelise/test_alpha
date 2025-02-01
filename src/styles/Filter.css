@@ -16,19 +16,17 @@
 
 .dropdown {
     position: absolute;
-    background-color: var(--secondary-background-color);
+    background-color: var(--light-secondary-background-color);
     z-index: 1;
     margin-top: 5px;
     padding: 10px;
     border-radius: 4px;
     transform: translate(-70%, -30%);
     width: 70px;
-    height: 60px;
+    height: 75px;
 }
 
 .dropdown button {
-    background-color: var(--secondary-background-color);
-    color: var(--secondary-text-color);
     border-color:  var(--secondary-text-color);
     padding: 3px;
     margin-bottom: 3px;

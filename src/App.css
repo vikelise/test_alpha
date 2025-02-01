@@ -1,25 +1,8 @@
-
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-
-.k{
-  background-color: lightblue;
-  display: inline-block;
-}
-
-
-
-
-
-
-
-
-
 
 @keyframes App-logo-spin {
   from {

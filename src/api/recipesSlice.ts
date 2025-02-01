@@ -6,8 +6,8 @@ export interface Recipe {
     title: string;
     image: string;
     readyInMinutes: number;
-    spoonacularScore: number;
-    pricePerServing:  number;
+    cookingMinutes: number;
+    pricePerServing:  number | string;
     summary: string;
     vegan: boolean;
     vegetarian: boolean;
@@ -18,10 +18,10 @@ export interface Recipe {
     veryPopular: boolean;
     sustainable: boolean;
     lowFodmap: boolean;
-    weightWatcherSmartPoints: number;
-    healthScore: number;
+    weightWatcherSmartPoints: number | string;
+    healthScore: number | string;
     liked: boolean;
-    servings: number;
+    servings: number | string;
     extendedIngredients: object;
     instructions: string;
     //интерфейс  объекта рецепта
@@ -91,7 +91,9 @@ const recipesSlice = createSlice({
             })
             .addCase(fetchRecipes.fulfilled, (state, action) => {
                 state.loading = false;
-                state.recipes = action.payload;
+                const existingIds = new Set(state.recipes.map(recipe => recipe.id));
+                const newRecipes = action.payload.filter((recipe: Recipe) => !existingIds.has(recipe.id));
+                state.recipes = [...state.recipes, ...newRecipes];
             })
             .addCase(fetchRecipes.rejected, (state, action) => {
                 state.loading = false;
