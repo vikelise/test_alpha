@@ -2,7 +2,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'; // Импорт маршрутов
 import Home from './components/Home'; // Импорт компонента главной страницы
-//import NotFound from './components/NotFound'; // Импорт компонента для обработки 404
+import NotFound from './components/NotFound'; // Импорт компонента для обработки 404
 import RecipeList from "./components/RecipeList"; // Импорт компонента нижнего колонтитула
 import RecipeDetail from "./components/RecipeDetail";
 import CreateCard from "./components/CreateProduct";
@@ -17,7 +17,7 @@ const App: React.FC = () => {
             <Route path="/products" element={<RecipeList />} />
             <Route path="/products/:id" element={<RecipeDetail />} />
             <Route path="/create-product" element={<CreateCard />} />
-              //Route path="*" element={ }  {/* Страница 404 */}
+            <Route path="*" element={<NotFound/> }/> 
           </Routes>
         </main>
       </div>

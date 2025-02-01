@@ -58,7 +58,6 @@ const CreateCard: React.FC = () => {
             cookingMinutes: false,
         });
 
-        // Минимальная валидация
         const newFieldErrors = {
             title: !title,
             image: !image,

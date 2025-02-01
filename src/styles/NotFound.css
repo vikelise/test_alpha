@@ -1,4 +1,4 @@
-.loading-error-container{
+.not-found-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,8 +7,11 @@
     gap: 7px;
 }
 
-.loading-error-img{
+.not-found-img {
     border-radius: 10px;
-    max-width: 200px;
+    max-width: 100px;
     min-width: 200px;
+}
+.not-found-link{
+    color: var(--secondary-background-color);
 }
