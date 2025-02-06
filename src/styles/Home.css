@@ -1,6 +1,16 @@
-.home{
-    position: relative;
+.content{
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.home{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     overflow: hidden;
 }
 
@@ -11,35 +21,145 @@
 }
 
 .home h1 {
-    position: absolute;
-    transform: translate(-90%, -40%);
     font-size: 1rem;
     text-align: center;
-    z-index: 1;
 }
 
 .home-welcome{
-    top: 43%;
-    left: 50%;
+    margin: 2rem 12rem 0 2rem;
 }
 
-.home-or {
-    top: 59%;
-    left: 30%;
+.home-or{
+    margin: 1.5rem 12.5rem 0 2rem;
 }
 
-.home button{
-    position: absolute;
+.home.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирует кнопки */
     z-index: 1;
-    transform: translate(-90%, -40%);
 }
 
 .home-btn1{
-    top: 53%;
-    left: 43%;
+    margin: 20px 170px 0 0;
 }
 
-.home-btn2{
-    top: 65%;
-    left: 39%;
+.home-btn2 {
+    margin: 30px 0px 0 17px;
 }
+
+@media (min-width: 768px) {
+
+    .home h1{
+        font-size: 1.6rem;
+    }
+
+    .home-welcome{
+        margin: 1rem 25rem 0 8rem;
+    }
+
+    .home-or{
+        margin: 1.5rem 19rem 0 0;
+    }
+
+    .home-btn1{
+        font-size: 1.6rem;
+        margin: 20px 300px 0 0;
+    }
+
+    .home-btn2 {
+        font-size: 1.6rem;
+        margin: 30px 0 0 30px;
+    }
+}
+
+@media (min-width: 912px) and (max-width: 1536px) {
+    .app-container{
+        font-size: 1.8rem;
+    }
+    .home-img{
+        transform: rotate(90deg);
+        max-width: 100%;
+        height: auto;
+        margin: -40rem auto 0 0;
+    }
+
+    .home h1{
+        font-size: 1.8rem;
+    }
+
+    .home-welcome{
+        margin: -63rem 10rem 0 10rem;
+    }
+
+    .home .button-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .home-or{
+        margin: 1.5rem 3rem 0 3rem;
+    }
+
+    .home-btn1{
+        font-size: 1.8rem;
+        margin: 20px 0 0 0;
+    }
+
+    .home-btn2 {
+        font-size: 1.8rem;
+        margin: 1.5rem 0 0 0;
+    }
+
+    .home-welcome-text{
+        margin: 40rem 6rem -50rem 6rem;
+        text-align: center;
+    }
+
+    .home-welcome-text-title{
+        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1536px){
+    .app-container{
+        font-size: 1rem;
+    }
+
+    .home-welcome{
+        margin: -30rem 22rem 0 22rem;
+    }
+
+    .home-img{
+        transform: scale(1.3) rotate(90deg);
+        margin: -3rem 0 0 0;
+    }
+
+    .home-welcome-text{
+        margin: 30rem 2rem -35rem 2rem;
+    }
+
+    .home h1{
+        font-size: 1.2rem;
+    }
+
+    .home-or{
+        margin: 1rem 3rem 0 3rem;
+    }
+
+    .home-btn1{
+        font-size: 1rem;
+        margin: 0.5rem 0 0 0;
+    }
+
+    .home-btn2 {
+        font-size: 1rem;
+        margin: 0.5rem 0 0 0;
+    }
+
+    .home-welcome-text-title{
+        margin-bottom: 0.5rem;
+    }
+}
+
+
