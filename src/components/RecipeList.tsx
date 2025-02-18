@@ -19,7 +19,7 @@ const RecipeList: React.FC = () => {
     //определение состояния пагинации
     const [currentPage, setCurrentPage] = useState(1);
     //определение количество карточек на странице
-    const itemsPerPage = 10;
+    const itemsPerPage = 12;
 
     // Состояние для фильтрации
     const [filter, setFilter] = useState<'all' | 'liked'>('all');

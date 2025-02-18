@@ -46,7 +46,7 @@ export const fetchRecipes = createAsyncThunk('recipes/fetchRecipes', async () =>
     const response = await axios.get('https://api.spoonacular.com/recipes/complexSearch', {
         params: {
             apiKey: '95b7951b349848d989f4113c875b481a', // Замените на ваш API ключ
-            number: 2,
+            number: 20,
             offset: 0,
         },
     });
