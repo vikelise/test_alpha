@@ -84,10 +84,12 @@ const RecipeList: React.FC = () => {
                     <Breadcrumb items={breadcrumbItems}/>
                     <Filter filter={filter} setFilter={setFilter}/>
                 </div>
+                <div className="recipe-list-container">
                 {currentItems.map((recipe: any) => (
                     <RecipeCard key={recipe.id} id={recipe.id} title={recipe.title} image={recipe.image}
                                 liked={recipe.liked}/>
                 ))}
+                </div>
                 <Pagination currentPage={currentPage} totalPages={totalPages} setCurrentPage={handlePageChange}/>
             </div>
             <Footer/>

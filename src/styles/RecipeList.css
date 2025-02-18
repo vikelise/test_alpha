@@ -12,3 +12,16 @@
     max-width: 200px;
     min-width: 200px;
 }
+
+.recipe-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (min-width: 1024px) {
+    .recipe-list-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

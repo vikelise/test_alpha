@@ -2,7 +2,7 @@
   margin: 15px;
 }
 
-.recipe-container img {
+.recipe-img img {
   width: 100%;
   border-radius: 10px;
   margin: 10px 0 10px 0;
@@ -91,12 +91,12 @@
 
 .dotted-line {
   width: 100%;
-  height: 1px; /* Высота линии */
-  background: transparent; /* Фон линии */
+  height: 1px;
+  background: transparent;
   border-top: 4px dotted var(--secondary-background-color);
   position: absolute;
   left: 0;
-  z-index: -1; /* Помещаем линию под элементами */
+  z-index: -1;
 }
 
 .recipe-instructions {
@@ -114,3 +114,49 @@
 .card-btn-details {
   fill: var(--secondary-background-color);
 }
+
+@media (min-width: 768px) {
+  .recipe-img{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 10px 0;
+  }
+
+  .recipe-img img{
+    width: 70%;
+  }
+
+  .recipe-container {
+    margin: 15px 70px 15px 70px;
+  }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1536px){
+
+  .recipe-container {
+    margin: 15px 70px 15px 70px;
+  }
+
+  .recipe-img{
+    margin-right: 30px;
+  }
+
+  .recipe-img img {
+    width: 100%;
+  }
+
+  .recipe-details-container {
+    display: flex;
+  }
+
+  .recipe-details{
+    margin-top: 50px;
+  }
+
+  .recipe-time-container{
+    padding: 0 10rem 0 10rem;
+  }
+}
+
+
