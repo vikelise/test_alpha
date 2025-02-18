@@ -249,3 +249,35 @@ input[type="number"]::-webkit-outer-spin-button {
 .added-products-list li{
     margin-left: 20px;
 }
+
+@media (min-width: 768px) {
+    .create-container{
+        margin: 15px 70px 15px 70px;
+    }
+
+    .products-inputs-container input{
+        display: block;
+    }
+
+    .products-inputs-button-container button {
+        margin: 20px 20px 0 100px;
+    }
+
+    .form-time-item-container{
+        justify-content: flex-start;
+        gap: 30px;
+    }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1536px){
+    .create-container{
+        margin: 15px 250px 15px 250px;
+    }
+
+    .input, textarea{
+        width: 70%;
+    }
+
+
+}
