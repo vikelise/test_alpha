@@ -38,7 +38,7 @@ const RecipeDetail: React.FC = () => {
         state.recipes.recipes.find((recipe: Recipe) => recipe.id === recipeId)
     );
     const breadcrumbItems = [
-        {label: 'Home', path: '/'},
+        {label: 'Home', path: '/test_alpha'},
         {label: 'Recipes', path: '/products'},
     ];
 

@@ -73,7 +73,7 @@ const RecipeList: React.FC = () => {
     };
 
     const breadcrumbItems = [
-        {label: 'Home', path: '/'},
+        {label: 'Home', path: '/test_alpha'},
     ];
 
     return (

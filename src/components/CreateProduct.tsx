@@ -128,8 +128,7 @@ const CreateCard: React.FC = () => {
 
 
     const breadcrumbItems = [
-        {label: 'Home', path: '/'},
-        {label: 'Create', path: '/create-product'},
+        {label: 'Home', path: '/test_alpha'},
     ];
 
     const totalReadyInMinutes = (readyHours * 60) + readyMinutes;
