@@ -132,7 +132,7 @@
 
 }
 
-@media (min-width: 1024px) and (max-width: 1536px){
+@media (min-width: 1024px){
 
   .recipe-container {
     margin: 15px 70px 15px 70px;

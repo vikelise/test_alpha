@@ -177,6 +177,12 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-bottom: 7px;
 }
 
+.product-item-del{
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+}
+
 .upload-container{
     border: 2px dashed var(--primary-text-color);
     border-radius: 10px;
@@ -270,7 +276,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 }
 
-@media (min-width: 1024px) and (max-width: 1536px){
+@media (min-width: 1024px){
     .create-container{
         margin: 15px 250px 15px 250px;
     }

@@ -162,4 +162,53 @@
     }
 }
 
+@media (min-width: 1537px){
+    .app-container{
+        font-size: 1.5rem;
+    }
+
+    .home-welcome{
+        margin: -27rem 22rem 0 22rem;
+    }
+
+    .home-img{
+        transform: scale(1.3) rotate(90deg);
+        margin: -3rem 0 0 0;
+    }
+
+    .home-welcome-text{
+        margin: 40rem 2rem -35rem 2rem;
+    }
+    .home .button-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .home h1{
+        font-size: 2rem;
+    }
+
+    .home-or{
+        margin: 2.5rem 3rem 0 3rem;
+    }
+
+    .home-btn1{
+        font-size: 2rem;
+        margin: 2rem 0 0 0;
+    }
+
+    .home-btn2 {
+        font-size: 2rem;
+        margin: 2rem 0 0 0;
+    }
+
+    .home-welcome-text{
+        text-align: center;
+    }
+
+    .home-welcome-text-title{
+        margin-bottom: 0.5rem;
+    }
+}
+
 

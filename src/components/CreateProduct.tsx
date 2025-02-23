@@ -54,8 +54,6 @@ const CreateCard: React.FC = () => {
             image: false,
             summary: false,
             instructions: false,
-            readyMinutes: false,
-            cookingMinutes: false,
         });
 
         const newFieldErrors = {
@@ -63,8 +61,6 @@ const CreateCard: React.FC = () => {
             image: !image,
             summary: !summary,
             instructions: !instructions,
-            readyMinutes: !readyMinutes,
-            cookingMinutes: !cookingMinutes,
         };
 
         if (Object.values(newFieldErrors).some(Boolean)) {
@@ -80,7 +76,7 @@ const CreateCard: React.FC = () => {
 
         // Создание нового рецепта
         const newRecipe = {
-            id:  Math.floor(Math.random() * 1000000),
+            id: Math.floor(Math.random() * 1000000),
             title,
             image,
             readyInMinutes: totalReadyInMinutes,
@@ -107,7 +103,7 @@ const CreateCard: React.FC = () => {
         // Сохранение рецепта в Redux store
         dispatch(addRecipe(newRecipe));
 
-        // Очистка формы
+        // Очистка формы только при успешной отправке
         setTitle('');
         setImage('');
         setSummary('');
@@ -141,6 +137,12 @@ const CreateCard: React.FC = () => {
 
     const toggleProductListVisibility = () => {
         setIsProductListVisible(prev => !prev);
+    };
+
+    const clickDelProductItem = (index:number) =>{
+        setExtendedIngredients(prevIngredients =>
+            prevIngredients.filter((_, i) => i !== index)
+        );
     };
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -397,7 +399,6 @@ const CreateCard: React.FC = () => {
                                                min="0"
                                                max="59"
                                                onChange={(e) => setReadyMinutes(Number(e.target.value))}
-                                               className={fieldErrors.readyMinutes ? "error" : undefined}
                                                onKeyPress={handleKeyPress}
                                                />
                                     </div>
@@ -419,7 +420,6 @@ const CreateCard: React.FC = () => {
                                                min="0"
                                                max="59"
                                                onChange={(e) => setCookingMinutes(Number(e.target.value))}
-                                               className={fieldErrors.cookingMinutes ? "error" : undefined}
                                                onKeyPress={handleKeyPress}
                                                />
                                     </div>
@@ -479,6 +479,14 @@ const CreateCard: React.FC = () => {
                                             {extendedIngredients.map((ingredient, index) => (
                                                 <li key={index}>
                                                     {ingredient.nameClean} - {ingredient.amount} {ingredient.unit}
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                         fill="currentColor" className="product-item-del"
+                                                         viewBox="0 0 16 16"
+                                                         onClick={()=>clickDelProductItem(index)}
+                                                    >
+                                                        <path
+                                                            d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+                                                    </svg>
                                                 </li>
                                             ))}
                                         </ul>
